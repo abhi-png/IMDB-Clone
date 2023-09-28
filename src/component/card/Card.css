@@ -9,7 +9,7 @@
   min-width: 200px;
   height: 300px;
   z-index: 0;
-  border: 1px solid rgb(99, 99, 99);
+  border: 1px solid rgb(54, 54, 54);
 }
 
 .cards:hover {

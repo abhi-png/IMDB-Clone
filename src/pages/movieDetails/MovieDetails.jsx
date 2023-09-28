@@ -10,12 +10,12 @@ const MovieDetails = () => {
    useEffect(() => {
       getData()
       window.scrollTo(0, 0)
-   }, [])
+   }, []);
 
    const getData = () => {
       fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`)
-         .then(res => res.json())
-         .then(data => setMovie(data))
+      .then(res => res.json())
+      .then(data => setMovie(data))
    }
 
    return (

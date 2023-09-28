@@ -10,11 +10,7 @@ const MovieList = () => {
 
    useEffect(() => {
       getData()
-   }, []);
-
-   useEffect(() => {
-      getData()
-   }, [type]);
+   });
 
    const getData = () => {
       fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=${api_key}`)
@@ -26,11 +22,9 @@ const MovieList = () => {
       <div className="movie__list">
          <h2 className="list__title">{(type ? type : "popular").toUpperCase()}</h2>
          <div className="list__cards">
-            {
-               movieList.map((movie)=>(
-                  <Card movie={movie} />
-               ))
-            }
+            {movieList.map((movie, index)=>(
+               <Card movie={movie} key={index} />
+            ))}
          </div>
       </div>
    )
